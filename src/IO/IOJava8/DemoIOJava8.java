@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Struct;
 import java.util.Arrays;
 import java.util.List;
 
@@ -49,7 +48,11 @@ public class DemoIOJava8 {
         String destinationPath = "C:\\Users\\Andrei\\IdeaProjects\\Java Advanced 5\\src";
         Path destinationDir =Paths.get(destinationPath + "\\"+folderName);
         //create directory
-        Files.createDirectory(destinationDir);
+        if (Files.exists(destinationDir)){
+            System.out.println("Folder already exists at: " + destinationDir);
+        }else {
+            Files.createDirectory(destinationDir);
+        }
     }
 
 }
