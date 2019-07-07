@@ -1,1 +1,3 @@
-Alex, Ana, Cristi
+Alex
+Ana
+Cristi

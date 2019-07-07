@@ -37,7 +37,7 @@ public class DemoIOJava8 {
         Path destination = Paths.get("C:\\Users\\Andrei\\IdeaProjects\\Java Advanced 5\\output Java8.txt");
 
         //create content
-        List<String> content = Arrays.asList("Alex, Ana, Cristi");
+        List<String> content = Arrays.asList("Alex", "Ana", "Cristi");
         Files.write(destination,content);
     }
 
