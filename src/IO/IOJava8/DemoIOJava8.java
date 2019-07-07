@@ -4,11 +4,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Struct;
 import java.util.Arrays;
 import java.util.List;
 
 public class DemoIOJava8 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         try {
             readFileWithJava8();
         } catch (IOException e) {
@@ -19,6 +20,8 @@ public class DemoIOJava8 {
         } catch (IOException e) {
             System.out.println("Could not write");
         }
+
+        createDir();
     }
 
     private static void readFileWithJava8() throws IOException {
@@ -39,6 +42,14 @@ public class DemoIOJava8 {
         //create content
         List<String> content = Arrays.asList("Alex", "Ana", "Cristi");
         Files.write(destination,content);
+    }
+
+    private static void createDir() throws IOException {
+        String folderName = "generatedFolder";
+        String destinationPath = "C:\\Users\\Andrei\\IdeaProjects\\Java Advanced 5\\src";
+        Path destinationDir =Paths.get(destinationPath + "\\"+folderName);
+        //create directory
+        Files.createDirectory(destinationDir);
     }
 
 }
