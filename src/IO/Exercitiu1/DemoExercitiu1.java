@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class DemoExercitiu1 {
     public static void main(String[] args) throws IOException {
         Path source = Paths.get("simplefile.txt");
-        System.out.println(countWordsJava8(source));
+       // System.out.println(countWordsJava8(source));
 
 //        long result = countWordsJava8(source);
 //        System.out.println(result);
@@ -39,7 +39,7 @@ public class DemoExercitiu1 {
         //TODO: implement usingg Java 7
         FileReader fileReader = new FileReader("C:\\Users\\Andrei\\IdeaProjects\\Java Advanced 5\\simplefile.txt");
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileReader))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\Andrei\\IdeaProjects\\Java Advanced 5\\simplefile.txt"))) {
             //read line by line
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -51,7 +51,6 @@ public class DemoExercitiu1 {
                     }
                     line = bufferedReader.readLine();
                     System.out.println("Total number of words: " + count);
-                    bufferedReader.close();
                 }
             }
         }
